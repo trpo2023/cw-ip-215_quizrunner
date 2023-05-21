@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <quiz.h>
+
 int loadQuestions(const char *filename, Question *questions, int numQuestions) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
