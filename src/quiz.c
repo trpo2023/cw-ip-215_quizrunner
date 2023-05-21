@@ -126,74 +126,48 @@ void createTest(const char *filename) {
 void editTest(const char *filename) {
     FILE *file = fopen(filename, "r+");
     if (file == NULL) {
-        printf("Failed to open quiz file: %s\n", filename);
+        printf("Failed to open test file: %s\n", filename);
         return;
     }
 
     char line[256];
     int questionIndex = 0;
+    int blockIndex = 0;
 
     while (fgets(line, sizeof(line), file)) {
         // Remove the newline character
         line[strcspn(line, "\n")] = '\0';
 
-        // First line is the question
-        printf("Question %d: %s\n", questionIndex + 1, line);
+        if (blockIndex % 7 == 0) {
+            printf("Question %d: %s\n", questionIndex + 1, line);
+            printf("Enter new question (or 'pass' to skip): ");
+            fgets(line, sizeof(line), stdin);
+            line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
-        // Next four lines are the answer options
-        for (int i = 0; i < 4; i++) {
-            fgets(line, sizeof(line), file);
-            line[strcspn(line, "\n")] = '\0';
-            printf("Option %d: %s\n", i + 1, line);
-        }
-
-        // Fifth line is the correct option
-        fgets(line, sizeof(line), file);
-        line[strcspn(line, "\n")] = '\0';
-        printf("Correct option: %s\n", line);
-
-        // Sixth line is the score
-        fgets(line, sizeof(line), file);
-        line[strcspn(line, "\n")] = '\0';
-        printf("Score: %s\n", line);
-
-        printf("\n");
-
-        // Skip newline character from previous input
-        getchar();
-
-        printf("Enter new question (or 'pass' to skip): ");
-        fgets(line, sizeof(line), stdin);
-        line[strcspn(line, "\n")] = '\0'; // Remove newline character
-
-        if (strcmp(line, "pass") != 0) {
-            fprintf(file, "%s\n", line); // Add newline character to written line
-
-            for (int i = 0; i < 4; i++) {
-                printf("Enter option %d: ", i + 1);
-                fgets(line, sizeof(line), stdin);
-                line[strcspn(line, "\n")] = '\0';
-                fprintf(file, "%s\n", line);
+            if (strcmp(line, "pass") != 0) {
+                fseek(file, -strlen(line) - 1, SEEK_CUR); // Move file pointer back to the start of the question line
+                fprintf(file, "%s\n", line); // Write new question
             }
-
-            printf("Enter correct option (1-4): ");
+        } else {
+            printf("Option or answer or score: %s\n", line);
+            printf("Enter new option: ");
             fgets(line, sizeof(line), stdin);
-            line[strcspn(line, "\n")] = '\0';
-            fprintf(file, "%s\n", line);
+            line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
-            printf("Enter score: ");
-            fgets(line, sizeof(line), stdin);
-            line[strcspn(line, "\n")] = '\0';
-            fprintf(file, "%s\n", line);
+            fseek(file, -strlen(line) - 1, SEEK_CUR); // Move file pointer back to the start of the option line
+            fprintf(file, "%s\n", line); // Write new option
         }
 
-        questionIndex++;
+        blockIndex++;
+        if (blockIndex % 7 == 0) {
+            printf("\n");
+            questionIndex++;
+        }
     }
 
     fclose(file);
-    printf("quiz edited successfully in file: %s\n", filename);
+    printf("Test edited successfully in file: %s\n", filename);
 }
-
 
 void mainMenu() {
     int choice;
@@ -215,6 +189,7 @@ void mainMenu() {
         printf("4. My Quiz\n");
         printf("Enter the quiz number: ");
         scanf("%d", &themenum);
+        getchar();
 
         if (themenum == 1) {
             editTest("files/topic1.txt");
