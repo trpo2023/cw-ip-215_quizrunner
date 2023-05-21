@@ -27,9 +27,13 @@ int loadQuestions(const char *filename, Question *questions, int numQuestions) {
             strcpy(questions[questionIndex].options[i], line);
         }
 
-        // Last line is the correct option
+        // Penultimate line is the correct option
         fgets(line, sizeof(line), file);
         questions[questionIndex].correctOption = atoi(line);
+
+        // Last line is the score
+        fgets(line, sizeof(line), file);
+        questions[questionIndex].score = atoi(line);
 
         questionIndex++;
         if (questionIndex >= numQuestions) {
@@ -46,13 +50,14 @@ void playQuiz(const char *filename) {
     const int numQuestions = 10;
     Question questions[numQuestions];
     int score = 0;
+    int totalScore = 0;
 
     if (!loadQuestions(filename, questions, numQuestions)) {
         return;
     }
 
     for (int i = 0; i < numQuestions; i++) {
-        printf("Question %d: %s\n", i + 1, questions[i].question);
+        printf("Question %d (Points: %d): %s\n", i + 1, questions[i].score, questions[i].question);
         for (int j = 0; j < 4; j++) {
             printf("%d. %s\n", j + 1, questions[i].options[j]);
         }
@@ -63,17 +68,17 @@ void playQuiz(const char *filename) {
 
         if (userChoice == questions[i].correctOption) {
             printf("Correct!\n");
-            score++;
+            score += questions[i].score;
         } else {
             printf("Incorrect. Correct answer: %d\n", questions[i].correctOption);
         }
 
         printf("\n");
+        totalScore += questions[i].score;
     }
 
-    printf("You scored %d out of %d possible points.\n", score, numQuestions);
+    printf("You scored %d out of %d possible points.\n", score, totalScore);
 }
-
 
 void createTest(const char *filename) {
     FILE *file = fopen(filename, "w");
@@ -212,13 +217,13 @@ void mainMenu() {
         scanf("%d", &themenum);
 
         if (themenum == 1) {
-            editTest("topic1.txt");
+            editTest("files/topic1.txt");
         } else if (themenum == 2) {
-            editTest("topic2.txt");
+            editTest("files/topic2.txt");
         } else if (themenum == 3) {
-            editTest("topic3.txt");
+            editTest("files/topic3.txt");
         } else if (themenum == 4) {
-            editTest("my_quiz.txt");
+            editTest("files/my_quiz.txt");
         } else {
             printf("Invalid quiz number!\n");
         }
@@ -234,18 +239,18 @@ void mainMenu() {
         scanf("%d", &themenum);
 
         if (themenum == 1) {
-            playQuiz("topic1.txt");
+            playQuiz("files/topic1.txt");
         } else if (themenum == 2) {
-            playQuiz("topic2.txt");
+            playQuiz("files/topic2.txt");
         } else if (themenum == 3) {
-            playQuiz("topic3.txt");
+            playQuiz("files/topic3.txt");
         } else if (themenum == 4) {
-            playQuiz("my_quiz.txt");
+            playQuiz("files/my_quiz.txt");
         } else {
             printf("Invalid quiz number!\n");
         }
     } else if (choice == 2) {
-        createTest("my_quiz.txt");
+        createTest("files/my_quiz.txt");
     } else {
         printf("Invalid choice!\n");
     }

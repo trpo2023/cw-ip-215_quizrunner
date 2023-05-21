@@ -18,4 +18,4 @@ $(PREF_OBJ)%.o : $(PREF_SRC)%.c $(PREF_INC)%.h
 	$(CC) -c $<%.c -o $@%.o -I$(PREF_INC)
 
 clean:
-rm -f $(TARGET) $(PREF_OBJ)*.o
+	rm -f $(TARGET) $(PREF_OBJ)*.o
