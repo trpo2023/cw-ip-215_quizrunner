@@ -182,7 +182,7 @@ int mainMenu() {
 
     if (choice == 3) {
         int themenum;
-        char topicnum[256];
+        //char topicnum[256];
         printf("Choose a quiz to edit:\n");
         printf("1. Math\n");
         printf("2. Geometry\n");
@@ -208,7 +208,7 @@ int mainMenu() {
         }
     } else if (choice == 1) {
         int themenum;
-        char topicnum[256];
+        //char topicnum[256];
         printf("Choose a quiz to play:\n");
         printf("1. Math\n");
         printf("2. Geometry\n");
