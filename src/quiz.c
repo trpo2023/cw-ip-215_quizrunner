@@ -169,12 +169,13 @@ void editTest(const char *filename) {
     printf("Test edited successfully in file: %s\n", filename);
 }
 
-void mainMenu() {
+int mainMenu() {
     int choice;
     printf("Greetings! Welcome to QuizRunner ver.4.2.4 by DiSeDgE, Farbez & Haki. Good luck! \n Choose an option:\n");
     printf("1. Play quiz \n");
     printf("2. Create quiz\n");
     printf("3. Edit quiz\n");
+    printf("0. Exit game\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
     getchar();
@@ -187,6 +188,7 @@ void mainMenu() {
         printf("2. Geometry\n");
         printf("3. Games\n");
         printf("4. My Quiz\n");
+        printf("0. Exit game\n");
         printf("Enter the quiz number: ");
         scanf("%d", &themenum);
         getchar();
@@ -199,6 +201,8 @@ void mainMenu() {
             editTest("files/topic3.txt");
         } else if (themenum == 4) {
             editTest("files/my_quiz.txt");
+        } else if (themenum == 0) {
+            return 0;
         } else {
             printf("Invalid quiz number!\n");
         }
@@ -210,6 +214,7 @@ void mainMenu() {
         printf("2. Geometry\n");
         printf("3. Games\n");
         printf("4. My Quiz\n");
+        printf("0. Exit game\n");
         printf("Enter the quiz number: ");
         scanf("%d", &themenum);
 
@@ -221,11 +226,15 @@ void mainMenu() {
             playQuiz("files/topic3.txt");
         } else if (themenum == 4) {
             playQuiz("files/my_quiz.txt");
+        } else if (themenum == 0) {
+            return 0;
         } else {
             printf("Invalid quiz number!\n");
         }
     } else if (choice == 2) {
         createTest("files/my_quiz.txt");
+    } else if (choice == 0) {
+        return 0;
     } else {
         printf("Invalid choice!\n");
     }

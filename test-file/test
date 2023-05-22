@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int test_createTest() {
+// Ввод тестовых данных
+const char* expectedLines[] = {
+"Question 1: Option 1",
+"Question 2: Option 2",
+"Question 3: Option 3",
+"Question 4: Option 4",
+"Question 5: Option 5",
+"1",
+"2"
+};
+
+// Открытие файла my_quiz.txt для чтения
+FILE* file = fopen("my_quiz.txt", "r");
+if (file == NULL) {
+printf("Ошибка: Не удалось открыть файл my_quiz.txt\n");
+return 0;
+}
+
+// Сравнение введенных данных с содержимым файла построчно
+char line[256];
+int lineIndex = 0;
+while (fgets(line, sizeof(line), file)) {
+// Удаление символа новой строки из строки
+line[strcspn(line, "\n")] = '\0';
+
+// Сравнение строки с ожидаемым значением
+if (strcmp(line, expectedLines[lineIndex]) != 0) {
+printf("Ошибка: Строка %d не соответствует ожидаемому значению\n", lineIndex + 1);
+fclose(file);
+return 0;
+}
+
+lineIndex++;
+}
+
+fclose(file);
+
+// Проверка, что все строки были сравнены
+if (lineIndex != sizeof(expectedLines) / sizeof(expectedLines[0])) {
+printf("Ошибка: Несоответствующее количество строк в файле\n");
+return 0;
+}
+
+return 1;
+}
+
+int main() {
+// Тестирование функции createTest
+int result = test_createTest();
+
+if (result) {
+printf("Тест createTest успешно пройден\n");
+} else {
+printf("Тест createTest не пройден\n");
+}
+
+return 0;
+}
