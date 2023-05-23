@@ -1,4 +1,4 @@
-# Course work on TRPO
+#  TRPO Course work
 Creating an application with unit testing.
 
 ## Authors:
