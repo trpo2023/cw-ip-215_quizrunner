@@ -1,8 +1,9 @@
 #include <ctestlib.h>
 
-int main() {
+int main()
+{
     int result1 = test_createTest(), result2 = test_editTest();
-	int result3 = TestplayQuiz("files/topictest1.txt");
+    int result3 = TestplayQuiz("files/topictest1.txt");
     if (result1) {
         printf("\ntest_createTest completed!\n");
     } else {
@@ -18,12 +19,26 @@ int main() {
     } else {
         printf("\ntest_playQuiz failed!\n");
     }
-	TestplayQuiz("files/topictest1.txt");
-	if(result1 + result2 + result3 == 3){
-		printf("\nAll tests passed successfully!\n");
-		printf("\n######     #     #####   #####\n#     #   # #   #     # #     #\n#     #  #   #  #       #      \n######  #     #  #####   ##### \n#       #######       #       #\n#       #     # #     # #     #\n#       #     #  #####   ##### \n");
-	}else{
-		printf("\n####### ######  ######  ####### ###### \n#       #     # #     # #     # #     #\n#       #     # #     # #     # #     #\n#####   ######  ######  #     # ###### \n#       #   #   #   #   #     # #   #  \n#       #    #  #    #  #     # #    # \n####### #     # #     # ####### #     #\n");
-	}
+    TestplayQuiz("files/topictest1.txt");
+    if (result1 + result2 + result3 == 3) {
+        printf("\nAll tests passed successfully!\n");
+        printf("\n######     #     #####   #####\n#     #   # #   #     # #    "
+               " "
+               "#\n#     #  #   #  #       #      \n######  #     #  #####   "
+               "##### "
+               "\n#       #######       #       #\n#       #     # #     # #   "
+               "  "
+               "#\n#       #     #  #####   ##### \n");
+    } else {
+        printf("\n####### ######  ######  ####### ###### \n#       #     # #   "
+               "  # "
+               "#     # #     #\n#       #     # #     # #     # #     "
+               "#\n#####   "
+               "######  ######  #     # ###### \n#       #   #   #   #   #     "
+               "# # "
+               "  #  \n#       #    #  #    #  #     # #    # \n####### #     "
+               "# #  "
+               "   # ####### #     #\n");
+    }
     return 0;
 }

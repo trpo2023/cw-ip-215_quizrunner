@@ -1,7 +1,8 @@
 #include <quiz.h>
 
-int loadQuestions(const char *filename, Question *questions, int numQuestions) {
-    FILE *file = fopen(filename, "r");
+int loadQuestions(const char* filename, Question* questions, int numQuestions)
+{
+    FILE* file = fopen(filename, "r");
     if (file == NULL) {
         printf("Failed to open file: %s\n", filename);
         return 0;
@@ -42,8 +43,8 @@ int loadQuestions(const char *filename, Question *questions, int numQuestions) {
     return 1;
 }
 
-
-void playQuiz(const char *filename) {
+void playQuiz(const char* filename)
+{
     const int numQuestions = 10;
     Question questions[numQuestions];
     int score = 0;
@@ -54,7 +55,10 @@ void playQuiz(const char *filename) {
     }
 
     for (int i = 0; i < numQuestions; i++) {
-        printf("Question %d (Points: %d): %s\n", i + 1, questions[i].score, questions[i].question);
+        printf("Question %d (Points: %d): %s\n",
+               i + 1,
+               questions[i].score,
+               questions[i].question);
         for (int j = 0; j < 4; j++) {
             printf("%d. %s\n", j + 1, questions[i].options[j]);
         }
@@ -67,7 +71,8 @@ void playQuiz(const char *filename) {
             printf("Correct!\n");
             score += questions[i].score;
         } else {
-            printf("Incorrect. Correct answer: %d\n", questions[i].correctOption);
+            printf("Incorrect. Correct answer: %d\n",
+                   questions[i].correctOption);
         }
 
         printf("\n");
@@ -77,8 +82,9 @@ void playQuiz(const char *filename) {
     printf("You scored %d out of %d possible points.\n", score, totalScore);
 }
 
-void createTest(const char *filename) {
-    FILE *file = fopen(filename, "w");
+void createTest(const char* filename)
+{
+    FILE* file = fopen(filename, "w");
     if (file == NULL) {
         printf("Failed to create quiz file: %s\n", filename);
         return;
@@ -104,12 +110,12 @@ void createTest(const char *filename) {
 
         printf("Correct option (1-4): ");
         scanf("%d", &correctOption);
-        getchar();  // Consume the newline character
+        getchar(); // Consume the newline character
         fprintf(file, "%d\n", correctOption);
 
         printf("Score for the question: ");
         scanf("%d", &score);
-        getchar();  // Consume the newline character
+        getchar(); // Consume the newline character
         fprintf(file, "%d\n", score);
 
         printf("\n");
@@ -119,9 +125,9 @@ void createTest(const char *filename) {
     printf("quiz created successfully in file: %s\n", filename);
 }
 
-
-void editTest(const char *filename) {
-    FILE *file = fopen(filename, "r+");
+void editTest(const char* filename)
+{
+    FILE* file = fopen(filename, "r+");
     if (file == NULL) {
         printf("Failed to open test file: %s\n", filename);
         return;
@@ -142,7 +148,10 @@ void editTest(const char *filename) {
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
             if (strcmp(line, "pass") != 0) {
-                fseek(file, -strlen(line) - 1, SEEK_CUR); // Move file pointer back to the start of the question line
+                fseek(file,
+                      -strlen(line) - 1,
+                      SEEK_CUR); // Move file pointer back to the start of the
+                                 // question line
                 fprintf(file, "%s\n", line); // Write new question
             }
         } else {
@@ -151,7 +160,10 @@ void editTest(const char *filename) {
             fgets(line, sizeof(line), stdin);
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
-            fseek(file, -strlen(line) - 1, SEEK_CUR); // Move file pointer back to the start of the option line
+            fseek(file,
+                  -strlen(line) - 1,
+                  SEEK_CUR); // Move file pointer back to the start of the
+                             // option line
             fprintf(file, "%s\n", line); // Write new option
         }
 
@@ -166,9 +178,11 @@ void editTest(const char *filename) {
     printf("Test edited successfully in file: %s\n", filename);
 }
 
-int mainMenu() {
+int mainMenu()
+{
     int choice;
-    printf("Greetings! Welcome to QuizRunner ver.4.2.4 by DiSeDgE, Farbez & Haki. Good luck! \n Choose an option:\n");
+    printf("Greetings! Welcome to QuizRunner ver.4.2.4 by DiSeDgE, Farbez & "
+           "Haki. Good luck! \n Choose an option:\n");
     printf("1. Play quiz \n");
     printf("2. Create quiz\n");
     printf("3. Edit quiz\n");
@@ -179,7 +193,7 @@ int mainMenu() {
 
     if (choice == 3) {
         int themenum;
-        //char topicnum[256];
+        // char topicnum[256];
         printf("Choose a quiz to edit:\n");
         printf("1. Math\n");
         printf("2. Geometry\n");
@@ -205,7 +219,7 @@ int mainMenu() {
         }
     } else if (choice == 1) {
         int themenum;
-        //char topicnum[256];
+        // char topicnum[256];
         printf("Choose a quiz to play:\n");
         printf("1. Math\n");
         printf("2. Geometry\n");
