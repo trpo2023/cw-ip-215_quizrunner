@@ -6,15 +6,15 @@
 #include <string.h>
 
 typedef struct {
-    int score;
-    char question[100];
-    char options[4][50];
-    int correctOption;
+  int score;
+  char question[100];
+  char options[4][50];
+  int correctOption;
 } Question;
 
 int loadQuestions(const char *filename, Question *questions, int numQuestions);
 int TestplayQuiz(const char *filename);
-void createTest(const char* filename);
+void createTest(const char *filename);
 int test_createTest();
 int test_editTest();
 
