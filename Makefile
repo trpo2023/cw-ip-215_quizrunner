@@ -34,9 +34,16 @@ $(TEST_OBJ_DIR)%.o: $(TEST_DIR)%.c
 $(TEST_OBJ_DIR)%.o: $(TEST_DIR)%.c $(PREF_TEST_INC)%.h
 	$(CC) -c $< -o $@ -I$(PREF_TEST_INC)
 
-.PHONY: test
+projectfile :=$(shell find . -type f -name '*.c')
+libfile := $(shell find . -type f -name '*.h')
+
+.PHONY: test clean format
 test: $(TEST_TARGET)
 	./$(TEST_TARGET)
 
 clean:
 	rm -f $(TARGET) $(OBJ_DIR)*.o $(TEST_OBJ_DIR)*.o $(TEST_TARGET)
+
+
+format: 
+	clang-format -i $(projectfile) $(libfile)
