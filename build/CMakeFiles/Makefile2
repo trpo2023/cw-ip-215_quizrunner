@@ -65,11 +65,10 @@ CMAKE_BINARY_DIR = /home/haki/cw-ip-215_quizrunner/build
 # The main recursive "all" target.
 all: CMakeFiles/QuizGame.dir/all
 all: CMakeFiles/Test.dir/all
-all: gtest/googletest-main/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: gtest/googletest-main/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -77,59 +76,7 @@ clean: CMakeFiles/QuizGame.dir/clean
 clean: CMakeFiles/Test.dir/clean
 clean: CMakeFiles/build.dir/clean
 clean: CMakeFiles/run_tests.dir/clean
-clean: gtest/googletest-main/clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory gtest/googletest-main
-
-# Recursive "all" directory target.
-gtest/googletest-main/all: gtest/googletest-main/googlemock/all
-.PHONY : gtest/googletest-main/all
-
-# Recursive "preinstall" directory target.
-gtest/googletest-main/preinstall: gtest/googletest-main/googlemock/preinstall
-.PHONY : gtest/googletest-main/preinstall
-
-# Recursive "clean" directory target.
-gtest/googletest-main/clean: gtest/googletest-main/googlemock/clean
-.PHONY : gtest/googletest-main/clean
-
-#=============================================================================
-# Directory level rules for directory gtest/googletest-main/googlemock
-
-# Recursive "all" directory target.
-gtest/googletest-main/googlemock/all: gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/all
-gtest/googletest-main/googlemock/all: gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all
-gtest/googletest-main/googlemock/all: gtest/googletest-main/googletest/all
-.PHONY : gtest/googletest-main/googlemock/all
-
-# Recursive "preinstall" directory target.
-gtest/googletest-main/googlemock/preinstall: gtest/googletest-main/googletest/preinstall
-.PHONY : gtest/googletest-main/googlemock/preinstall
-
-# Recursive "clean" directory target.
-gtest/googletest-main/googlemock/clean: gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/clean
-gtest/googletest-main/googlemock/clean: gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/clean
-gtest/googletest-main/googlemock/clean: gtest/googletest-main/googletest/clean
-.PHONY : gtest/googletest-main/googlemock/clean
-
-#=============================================================================
-# Directory level rules for directory gtest/googletest-main/googletest
-
-# Recursive "all" directory target.
-gtest/googletest-main/googletest/all: gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all
-gtest/googletest-main/googletest/all: gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
-.PHONY : gtest/googletest-main/googletest/all
-
-# Recursive "preinstall" directory target.
-gtest/googletest-main/googletest/preinstall:
-.PHONY : gtest/googletest-main/googletest/preinstall
-
-# Recursive "clean" directory target.
-gtest/googletest-main/googletest/clean: gtest/googletest-main/googletest/CMakeFiles/gtest.dir/clean
-gtest/googletest-main/googletest/clean: gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean
-.PHONY : gtest/googletest-main/googletest/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/QuizGame.dir
@@ -161,15 +108,15 @@ CMakeFiles/QuizGame.dir/clean:
 # Target rules for target CMakeFiles/Test.dir
 
 # All Build rule for target.
-CMakeFiles/Test.dir/all: gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=4,5 "Built target Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=4,5,6 "Built target Test"
 .PHONY : CMakeFiles/Test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 0
 .PHONY : CMakeFiles/Test.dir/rule
@@ -196,7 +143,7 @@ CMakeFiles/build.dir/all: CMakeFiles/Test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/build.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/build.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 0
 .PHONY : CMakeFiles/build.dir/rule
@@ -222,7 +169,7 @@ CMakeFiles/run_tests.dir/all: CMakeFiles/Test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/run_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 0
 .PHONY : CMakeFiles/run_tests.dir/rule
@@ -235,111 +182,6 @@ run_tests: CMakeFiles/run_tests.dir/rule
 CMakeFiles/run_tests.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/clean
 .PHONY : CMakeFiles/run_tests.dir/clean
-
-#=============================================================================
-# Target rules for target gtest/googletest-main/googlemock/CMakeFiles/gmock.dir
-
-# All Build rule for target.
-gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/build.make gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/depend
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/build.make gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=6,7 "Built target gmock"
-.PHONY : gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/all
-
-# Build rule for subdir invocation for target.
-gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 0
-.PHONY : gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/rule
-
-# Convenience name for target.
-gmock: gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/rule
-.PHONY : gmock
-
-# clean rule for target.
-gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/clean:
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/build.make gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/clean
-.PHONY : gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/clean
-
-#=============================================================================
-# Target rules for target gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir
-
-# All Build rule for target.
-gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/all
-gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/depend
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=8,9 "Built target gmock_main"
-.PHONY : gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all
-
-# Build rule for subdir invocation for target.
-gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 0
-.PHONY : gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/rule
-
-# Convenience name for target.
-gmock_main: gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/rule
-.PHONY : gmock_main
-
-# clean rule for target.
-gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/clean
-.PHONY : gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/clean
-
-#=============================================================================
-# Target rules for target gtest/googletest-main/googletest/CMakeFiles/gtest.dir
-
-# All Build rule for target.
-gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all:
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest-main/googletest/CMakeFiles/gtest.dir/depend
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest-main/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=10,11 "Built target gtest"
-.PHONY : gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all
-
-# Build rule for subdir invocation for target.
-gtest/googletest-main/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 0
-.PHONY : gtest/googletest-main/googletest/CMakeFiles/gtest.dir/rule
-
-# Convenience name for target.
-gtest: gtest/googletest-main/googletest/CMakeFiles/gtest.dir/rule
-.PHONY : gtest
-
-# clean rule for target.
-gtest/googletest-main/googletest/CMakeFiles/gtest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest-main/googletest/CMakeFiles/gtest.dir/clean
-.PHONY : gtest/googletest-main/googletest/CMakeFiles/gtest.dir/clean
-
-#=============================================================================
-# Target rules for target gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir
-
-# All Build rule for target.
-gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest-main/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=12,13 "Built target gtest_main"
-.PHONY : gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
-
-# Build rule for subdir invocation for target.
-gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haki/cw-ip-215_quizrunner/build/CMakeFiles 0
-.PHONY : gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/rule
-
-# Convenience name for target.
-gtest_main: gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/rule
-.PHONY : gtest_main
-
-# clean rule for target.
-gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean
-.PHONY : gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

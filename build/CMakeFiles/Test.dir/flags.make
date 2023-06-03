@@ -4,7 +4,7 @@
 # compile C with /usr/bin/gcc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/haki/cw-ip-215_quizrunner/gtest/googletest/include -isystem /home/haki/cw-ip-215_quizrunner/gtest/googletest-main/googletest/include -isystem /home/haki/cw-ip-215_quizrunner/gtest/googletest-main/googletest
+C_INCLUDES = -I/home/haki/cw-ip-215_quizrunner/src/project_lib
 
 C_FLAGS = -std=gnu11
 

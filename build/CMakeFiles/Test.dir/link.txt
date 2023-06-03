@@ -1,1 +1,1 @@
-/usr/bin/g++ CMakeFiles/Test.dir/test/tests/test.c.o -o Test  lib/libgtest.a 
+/usr/bin/gcc CMakeFiles/Test.dir/test/tests/test.c.o CMakeFiles/Test.dir/src/project_lib/quiz.c.o -o Test  /usr/lib/x86_64-linux-gnu/libcunit.so 
