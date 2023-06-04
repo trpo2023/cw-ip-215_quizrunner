@@ -45,6 +45,4 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/QuizGame.dir/DependInfo.cmake"
   "CMakeFiles/Test.dir/DependInfo.cmake"
-  "CMakeFiles/build.dir/DependInfo.cmake"
-  "CMakeFiles/run_tests.dir/DependInfo.cmake"
   )

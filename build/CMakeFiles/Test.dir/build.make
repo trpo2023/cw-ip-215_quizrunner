@@ -73,29 +73,29 @@ CMakeFiles/Test.dir/test/tests/test.c.o: CMakeFiles/Test.dir/flags.make
 CMakeFiles/Test.dir/test/tests/test.c.o: ../test/tests/test.c
 CMakeFiles/Test.dir/test/tests/test.c.o: CMakeFiles/Test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Test.dir/test/tests/test.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Test.dir/test/tests/test.c.o -MF CMakeFiles/Test.dir/test/tests/test.c.o.d -o CMakeFiles/Test.dir/test/tests/test.c.o -c /home/haki/cw-ip-215_quizrunner/test/tests/test.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Test.dir/test/tests/test.c.o -MF CMakeFiles/Test.dir/test/tests/test.c.o.d -o CMakeFiles/Test.dir/test/tests/test.c.o -c /home/haki/cw-ip-215_quizrunner/test/tests/test.c
 
 CMakeFiles/Test.dir/test/tests/test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Test.dir/test/tests/test.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/test/tests/test.c > CMakeFiles/Test.dir/test/tests/test.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/test/tests/test.c > CMakeFiles/Test.dir/test/tests/test.c.i
 
 CMakeFiles/Test.dir/test/tests/test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Test.dir/test/tests/test.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/test/tests/test.c -o CMakeFiles/Test.dir/test/tests/test.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/test/tests/test.c -o CMakeFiles/Test.dir/test/tests/test.c.s
 
 CMakeFiles/Test.dir/src/project_lib/quiz.c.o: CMakeFiles/Test.dir/flags.make
 CMakeFiles/Test.dir/src/project_lib/quiz.c.o: ../src/project_lib/quiz.c
 CMakeFiles/Test.dir/src/project_lib/quiz.c.o: CMakeFiles/Test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Test.dir/src/project_lib/quiz.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Test.dir/src/project_lib/quiz.c.o -MF CMakeFiles/Test.dir/src/project_lib/quiz.c.o.d -o CMakeFiles/Test.dir/src/project_lib/quiz.c.o -c /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Test.dir/src/project_lib/quiz.c.o -MF CMakeFiles/Test.dir/src/project_lib/quiz.c.o.d -o CMakeFiles/Test.dir/src/project_lib/quiz.c.o -c /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c
 
 CMakeFiles/Test.dir/src/project_lib/quiz.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Test.dir/src/project_lib/quiz.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c > CMakeFiles/Test.dir/src/project_lib/quiz.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c > CMakeFiles/Test.dir/src/project_lib/quiz.c.i
 
 CMakeFiles/Test.dir/src/project_lib/quiz.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Test.dir/src/project_lib/quiz.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c -o CMakeFiles/Test.dir/src/project_lib/quiz.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c -o CMakeFiles/Test.dir/src/project_lib/quiz.c.s
 
 # Object files for target Test
 Test_OBJECTS = \
@@ -108,7 +108,6 @@ Test_EXTERNAL_OBJECTS =
 Test: CMakeFiles/Test.dir/test/tests/test.c.o
 Test: CMakeFiles/Test.dir/src/project_lib/quiz.c.o
 Test: CMakeFiles/Test.dir/build.make
-Test: /usr/lib/x86_64-linux-gnu/libcunit.so
 Test: CMakeFiles/Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Test.dir/link.txt --verbose=$(VERBOSE)

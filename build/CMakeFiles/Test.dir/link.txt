@@ -1,1 +1,1 @@
-/usr/bin/gcc CMakeFiles/Test.dir/test/tests/test.c.o CMakeFiles/Test.dir/src/project_lib/quiz.c.o -o Test  /usr/lib/x86_64-linux-gnu/libcunit.so 
+/usr/bin/cc CMakeFiles/Test.dir/test/tests/test.c.o CMakeFiles/Test.dir/src/project_lib/quiz.c.o -o Test  -lcunit 

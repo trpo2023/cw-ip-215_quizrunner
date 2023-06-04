@@ -73,29 +73,29 @@ CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o: CMakeFiles/QuizGame.dir/flag
 CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o: ../src/project/QuizRunner.c
 CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o: CMakeFiles/QuizGame.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o -MF CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o.d -o CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o -c /home/haki/cw-ip-215_quizrunner/src/project/QuizRunner.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o -MF CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o.d -o CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o -c /home/haki/cw-ip-215_quizrunner/src/project/QuizRunner.c
 
 CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/src/project/QuizRunner.c > CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/src/project/QuizRunner.c > CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.i
 
 CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/src/project/QuizRunner.c -o CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/src/project/QuizRunner.c -o CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.s
 
 CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o: CMakeFiles/QuizGame.dir/flags.make
 CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o: ../src/project_lib/quiz.c
 CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o: CMakeFiles/QuizGame.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haki/cw-ip-215_quizrunner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o -MF CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o.d -o CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o -c /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o -MF CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o.d -o CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o -c /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c
 
 CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c > CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c > CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.i
 
 CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c -o CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/haki/cw-ip-215_quizrunner/src/project_lib/quiz.c -o CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.s
 
 # Object files for target QuizGame
 QuizGame_OBJECTS = \

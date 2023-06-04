@@ -1,6 +1,4 @@
 /home/haki/cw-ip-215_quizrunner/build/CMakeFiles/QuizGame.dir
 /home/haki/cw-ip-215_quizrunner/build/CMakeFiles/Test.dir
-/home/haki/cw-ip-215_quizrunner/build/CMakeFiles/build.dir
-/home/haki/cw-ip-215_quizrunner/build/CMakeFiles/run_tests.dir
 /home/haki/cw-ip-215_quizrunner/build/CMakeFiles/edit_cache.dir
 /home/haki/cw-ip-215_quizrunner/build/CMakeFiles/rebuild_cache.dir

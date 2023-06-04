@@ -142,32 +142,6 @@ Test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
 .PHONY : Test/fast
 
-#=============================================================================
-# Target rules for targets named build
-
-# Build rule for target.
-build: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 build
-.PHONY : build
-
-# fast build rule for target.
-build/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/build
-.PHONY : build/fast
-
-#=============================================================================
-# Target rules for targets named run_tests
-
-# Build rule for target.
-run_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tests
-.PHONY : run_tests
-
-# fast build rule for target.
-run_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
-.PHONY : run_tests/fast
-
 src/project/QuizRunner.o: src/project/QuizRunner.c.o
 .PHONY : src/project/QuizRunner.o
 
@@ -251,8 +225,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... build"
-	@echo "... run_tests"
 	@echo "... QuizGame"
 	@echo "... Test"
 	@echo "... src/project/QuizRunner.o"
