@@ -1,9 +1,7 @@
 #include <quiz.h>
 #include <stdio.h>
 
-
-int main()
-{
+int main() {
     int count = 1;
     while (count == 1) {
         mainMenu();
