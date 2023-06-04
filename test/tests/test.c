@@ -1,8 +1,8 @@
+#include "quiz.h"
+#include <CUnit/Basic.h>
+#include <CUnit/CUnit.h>
 #include <stdio.h>
 #include <string.h>
-#include <CUnit/CUnit.h>
-#include <CUnit/Basic.h>
-#include "quiz.h"
 
 void test_loadQuestions() {
     // Create a temporary test file with sample questions
@@ -78,7 +78,7 @@ void test_playQuiz() {
         return;
     }
 
-    fprintf(inputFile, "1\n");  // Choose option 1 for Question 1
+    fprintf(inputFile, "1\n"); // Choose option 1 for Question 1
 
     fclose(inputFile);
 
@@ -109,7 +109,8 @@ void test_playQuiz() {
         return;
     }
 
-    FILE* testOutputFile = fopen("/home/haki/cw-ip-215_quizrunner/files/expected_output.txt", "r");
+    FILE* testOutputFile = fopen(
+            "/home/haki/cw-ip-215_quizrunner/files/expected_output.txt", "r");
     if (testOutputFile == NULL) {
         CU_FAIL("Failed to open test output file");
         return;
@@ -152,8 +153,8 @@ int main() {
     }
 
     // Add the test cases to the suite
-    if (CU_add_test(suite, "test_loadQuestions", test_loadQuestions) == NULL ||
-        CU_add_test(suite, "test_playQuiz", test_playQuiz) == NULL) {
+    if (CU_add_test(suite, "test_loadQuestions", test_loadQuestions) == NULL
+        || CU_add_test(suite, "test_playQuiz", test_playQuiz) == NULL) {
         CU_cleanup_registry();
         return CU_get_error();
     }
