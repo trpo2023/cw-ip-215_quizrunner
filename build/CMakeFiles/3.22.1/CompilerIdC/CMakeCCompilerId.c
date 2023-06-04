@@ -664,17 +664,17 @@ char const* info_cray = "INFO"
 
 /* Convert integer to decimal digit literals.  */
 #define DEC(n)                                                           \
-    ('0' + (((n) / 10000000) % 10)), ('0' + (((n) / 1000000) % 10)),     \
-            ('0' + (((n) / 100000) % 10)), ('0' + (((n) / 10000) % 10)), \
-            ('0' + (((n) / 1000) % 10)), ('0' + (((n) / 100) % 10)),     \
-            ('0' + (((n) / 10) % 10)), ('0' + ((n) % 10))
+	('0' + (((n) / 10000000) % 10)), ('0' + (((n) / 1000000) % 10)),     \
+	('0' + (((n) / 100000) % 10)), ('0' + (((n) / 10000) % 10)), \
+	('0' + (((n) / 1000) % 10)), ('0' + (((n) / 100) % 10)),     \
+	('0' + (((n) / 10) % 10)), ('0' + ((n) % 10))
 
 /* Convert integer to hex digit literals.  */
 #define HEX(n)                                                    \
-    ('0' + ((n) >> 28 & 0xF)), ('0' + ((n) >> 24 & 0xF)),         \
-            ('0' + ((n) >> 20 & 0xF)), ('0' + ((n) >> 16 & 0xF)), \
-            ('0' + ((n) >> 12 & 0xF)), ('0' + ((n) >> 8 & 0xF)),  \
-            ('0' + ((n) >> 4 & 0xF)), ('0' + ((n)&0xF))
+	('0' + ((n) >> 28 & 0xF)), ('0' + ((n) >> 24 & 0xF)),         \
+	('0' + ((n) >> 20 & 0xF)), ('0' + ((n) >> 16 & 0xF)), \
+	('0' + ((n) >> 12 & 0xF)), ('0' + ((n) >> 8 & 0xF)),  \
+	('0' + ((n) >> 4 & 0xF)), ('0' + ((n)&0xF))
 
 /* Construct a string literal encoding the version number. */
 #ifdef COMPILER_VERSION
@@ -720,22 +720,24 @@ char const info_version[] = {'I',
 #endif
 #endif
                              ']',
-                             '\0'};
+                             '\0'
+                            };
 #endif
 
 /* Construct a string literal encoding the internal version number. */
 #ifdef COMPILER_VERSION_INTERNAL
 char const info_version_internal[]
-        = {'I', 'N', 'F', 'O', ':', 'c', 'o', 'm',
-           'p', 'i', 'l', 'e', 'r', '_', 'v', 'e',
-           'r', 's', 'i', 'o', 'n', '_', 'i', 'n',
-           't', 'e', 'r', 'n', 'a', 'l', '[', COMPILER_VERSION_INTERNAL,
-           ']', '\0'};
+    = {'I', 'N', 'F', 'O', ':', 'c', 'o', 'm',
+       'p', 'i', 'l', 'e', 'r', '_', 'v', 'e',
+       'r', 's', 'i', 'o', 'n', '_', 'i', 'n',
+       't', 'e', 'r', 'n', 'a', 'l', '[', COMPILER_VERSION_INTERNAL,
+       ']', '\0'
+      };
 #elif defined(COMPILER_VERSION_INTERNAL_STR)
 char const* info_version_internal
-        = "INFO"
-          ":"
-          "compiler_version_internal[" COMPILER_VERSION_INTERNAL_STR "]";
+    = "INFO"
+      ":"
+      "compiler_version_internal[" COMPILER_VERSION_INTERNAL_STR "]";
 #endif
 
 /* Construct a string literal encoding the version number components. */
@@ -776,7 +778,8 @@ char const info_simulate_version[] = {'I',
 #endif
 #endif
                                       ']',
-                                      '\0'};
+                                      '\0'
+                                     };
 #endif
 
 /* Construct the string literal in pieces to prevent the source from
@@ -808,21 +811,21 @@ char const* info_arch = "INFO"
 #define C_VERSION "90"
 #endif
 const char* info_language_standard_default = "INFO"
-                                             ":"
-                                             "standard_default[" C_VERSION "]";
+        ":"
+        "standard_default[" C_VERSION "]";
 
 const char* info_language_extensions_default = "INFO"
-                                               ":"
-                                               "extensions_default["
-/* !defined(_MSC_VER) to exclude Clang's MSVC compatibility mode. */
+        ":"
+        "extensions_default["
+        /* !defined(_MSC_VER) to exclude Clang's MSVC compatibility mode. */
 #if (defined(__clang__) || defined(__GNUC__) \
      || defined(__TI_COMPILER_VERSION__))    \
         && !defined(__STRICT_ANSI__) && !defined(_MSC_VER)
-                                               "ON"
+        "ON"
 #else
-                                               "OFF"
+        "OFF"
 #endif
-                                               "]";
+        "]";
 
 /*--------------------------------------------------------------------------*/
 
@@ -837,28 +840,28 @@ char* argv[];
 int main(int argc, char* argv[])
 #endif
 {
-    int require = 0;
-    require += info_compiler[argc];
-    require += info_platform[argc];
-    require += info_arch[argc];
+	int require = 0;
+	require += info_compiler[argc];
+	require += info_platform[argc];
+	require += info_arch[argc];
 #ifdef COMPILER_VERSION_MAJOR
-    require += info_version[argc];
+	require += info_version[argc];
 #endif
 #ifdef COMPILER_VERSION_INTERNAL
-    require += info_version_internal[argc];
+	require += info_version_internal[argc];
 #endif
 #ifdef SIMULATE_ID
-    require += info_simulate[argc];
+	require += info_simulate[argc];
 #endif
 #ifdef SIMULATE_VERSION_MAJOR
-    require += info_simulate_version[argc];
+	require += info_simulate_version[argc];
 #endif
 #if defined(__CRAYXT_COMPUTE_LINUX_TARGET)
-    require += info_cray[argc];
+	require += info_cray[argc];
 #endif
-    require += info_language_standard_default[argc];
-    require += info_language_extensions_default[argc];
-    (void)argv;
-    return require;
+	require += info_language_standard_default[argc];
+	require += info_language_extensions_default[argc];
+	(void)argv;
+	return require;
 }
 #endif
