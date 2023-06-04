@@ -1,3 +1,5 @@
+#include <quiz.h>
+
 int main()
 {
     int count = 1;
@@ -10,3 +12,4 @@ int main()
         printf("\n\n\n\n\n\n\n\n");
     }
     return 0;
+}
