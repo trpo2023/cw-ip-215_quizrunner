@@ -132,6 +132,7 @@ void test_playQuiz() {
     remove("test_questions.txt");
     remove("test_input.txt");
     remove("test_output.txt");
+    remove("expected_output.txt");
 
     // Assertion using CUnit macro
     CU_ASSERT_EQUAL(c1, EOF);
