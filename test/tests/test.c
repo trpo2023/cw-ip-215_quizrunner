@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 
-void test_loadQuestions() {
+void test_loadQuestions()
+{
     // Create a temporary test file with sample questions
     FILE* testFile = fopen("test_questions.txt", "w");
     if (testFile == NULL) {
@@ -53,7 +54,8 @@ void test_loadQuestions() {
     CU_ASSERT_EQUAL(questions[1].score, 5);
 }
 
-void test_playQuiz() {
+void test_playQuiz()
+{
     // Create a temporary test file with sample questions
     FILE* testFile = fopen("test_questions.txt", "w");
     if (testFile == NULL) {
@@ -139,7 +141,8 @@ void test_playQuiz() {
     CU_ASSERT_EQUAL(c1, EOF);
 }
 
-int main() {
+int main()
+{
     // Initialize CUnit test registry
     if (CU_initialize_registry() != CUE_SUCCESS) {
         return CU_get_error();
