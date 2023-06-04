@@ -24,6 +24,7 @@ libfile := $(shell find . -type f -name '*.h')
 .PHONY: test clean format
 
 test:
+	sudo apt-get update && sudo apt-get install cmake
 	cd build && make && make Test
 	cd build && ./Test
 
