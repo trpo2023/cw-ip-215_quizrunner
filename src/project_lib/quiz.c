@@ -43,7 +43,7 @@ int loadQuestions(const char* filename, Question* questions, int numQuestions)
     return 1;
 }
 
-void playQuiz(const char* filename) 
+void playQuiz(const char* filename)
 {
     const int numQuestions = 10;
     Question questions[numQuestions];
@@ -55,7 +55,7 @@ void playQuiz(const char* filename)
     }
 
     for (int i = 0; i < numQuestions; i++) {
-               printf("Question %d (Points: %d): %s\n",
+        printf("Question %d (Points: %d): %s\n",
                i + 1,
                questions[i].score,
                questions[i].question);
@@ -82,7 +82,7 @@ void playQuiz(const char* filename)
     printf("You scored %d out of %d possible points.\n", score, totalScore);
 }
 
-void createTest(const char* filename) 
+void createTest(const char* filename)
 {
     FILE* file = fopen(filename, "w");
     if (file == NULL) {
@@ -125,7 +125,7 @@ void createTest(const char* filename)
     printf("quiz created successfully in file: %s\n", filename);
 }
 
-void editTest(const char* filename) 
+void editTest(const char* filename)
 {
     FILE* file = fopen(filename, "r+");
     if (file == NULL) {
@@ -178,7 +178,7 @@ void editTest(const char* filename)
     printf("Test edited successfully in file: %s\n", filename);
 }
 
-int mainMenu() 
+int mainMenu()
 {
     int choice;
     printf("Greetings! Welcome to QuizRunner ver.4.2.4 by DiSeDgE, Farbez & "
