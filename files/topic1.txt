@@ -1,0 +1,70 @@
+Solve (2+2)*2
+6
+8
+12
+4
+2
+1
+Square root of 144 is
+11
+12
+9
+16
+2
+1
+The factorial of 6 is
+120
+650
+480
+720
+4
+2
+Number 1.41e-12 means
+1.41*10^-12
+e-12*1.41
+256.6564
+19
+1
+2
+If function has "e" in it, it is
+Exponential
+Increasing
+Decreasing
+Straight
+1
+3
+Logarifm of base "e" is
+log
+lg
+lgrf
+ln
+4
+3
+Choose a row where all numbers are primary
+11,22,33
+3,6,9
+1288,1974,1256
+29,37,83
+4
+3
+The Fibonacci row is a row of numbers that
+Are Divided by the prevous one's
+Are multiplied by each other
+Are summ of 2 prevous
+Are powers of the prevous one's
+3
+4
+D=b^2-4ac is formula for
+Fibonacci row
+Root for any number
+Discriminant
+Square of perfect hexagon
+3
+5
+Solve 65x^2 - 189x + 28 = 0. Answer is the greatest root
+1.95
+0.15
+2.75
+3.45
+3
+6
