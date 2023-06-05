@@ -24,12 +24,13 @@ libfile := $(shell find . -type f -name '*.h')
 .PHONY: test clean format
 
 test:
-	sudo apt-get update && sudo apt-get install cmake
+	sudo apt-get update && sudo apt-get install cmake && sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
 	cd build && cmake .. && make && make Test && ./Test
 clean:
 	rm -f $(TARGET) $(OBJ_DIR)*.o
 	cd build && rm -f expected_output.txt
 	cd build && make clean
+	rm -r build/*
 
 format:
 	clang-format -i $(projectfile) $(libfile)
