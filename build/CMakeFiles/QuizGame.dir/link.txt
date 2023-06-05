@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/QuizGame.dir/src/project/QuizRunner.c.o CMakeFiles/QuizGame.dir/src/project_lib/quiz.c.o -o QuizGame 

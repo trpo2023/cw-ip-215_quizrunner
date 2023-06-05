@@ -18,6 +18,9 @@ set(TEST_SOURCES
 # Определение пути к файлу expected_output.txt
 set(EXPECTED_OUTPUT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/files/expected_output.txt")
 
+# Определение пути к директории build
+set(BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/build")
+
 # Компиляция исполняемого файла вашего проекта
 add_executable(QuizGame ${PROJECT_SOURCES})
 
@@ -35,4 +38,4 @@ target_link_libraries(Test cunit)
 target_include_directories(Test PUBLIC /usr/include/CUnit)
 
 # Копирование файла expected_output.txt в директорию сборки
-configure_file(${EXPECTED_OUTPUT_FILE} ${CMAKE_CURRENT_BINARY_DIR}/expected_output.txt COPYONLY)
+configure_file(${EXPECTED_OUTPUT_FILE} ${BUILD_DIR}/expected_output.txt COPYONLY)

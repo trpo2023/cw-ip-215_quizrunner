@@ -25,9 +25,7 @@ libfile := $(shell find . -type f -name '*.h')
 
 test:
 	sudo apt-get update && sudo apt-get install cmake
-	cd build && make && make Test
-	cd build && ./Test
-
+	cd build && cmake .. && make && make Test && ./Test
 clean:
 	rm -f $(TARGET) $(OBJ_DIR)*.o
 	cd build && rm -f expected_output.txt

@@ -111,8 +111,7 @@ void test_playQuiz()
         return;
     }
 
-    FILE* testOutputFile = fopen(
-            "/home/haki/cw-ip-215_quizrunner/files/expected_output.txt", "r");
+    FILE* testOutputFile = fopen("expected_output.txt", "r");
     if (testOutputFile == NULL) {
         CU_FAIL("Failed to open test output file");
         return;
